@@ -17,8 +17,6 @@ jobs:
        with:
          distribution: 'zulu'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
          java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
-     - name: Verify Java installation
-       run: Java -version
      - name: Set up Maven
        uses: actions/checkout@v2
        with:
