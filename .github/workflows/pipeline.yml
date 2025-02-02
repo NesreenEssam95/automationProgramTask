@@ -25,4 +25,4 @@ jobs:
      - name: Build with Maven
        run: mvn clean install  # This will build your Java project using Maven
      - name: Run tests
-       run: mvn test  # This will run tests using Maven
+       run: mvn test -DsuiteXmlFile=testng.xml # This will run tests using Maven
