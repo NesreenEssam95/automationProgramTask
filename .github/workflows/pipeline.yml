@@ -12,17 +12,17 @@ jobs:
    steps:
      - name: Checkout code
        uses: actions/checkout@v2  # Checks out your repository code
-     - name: Set up JDK 17 (Adopt)
-       uses: adopt/setup-java@v2  # Sets up Java in the environment
+     - name: Set up JDK 17 
+       uses: actions/setup-java@v2  # Sets up Java in the environment
        with:
-         distribution: 'adopt'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
+         distribution: 'zulu'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
          java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
      - name: Verify Java installation
        run: Java -version
      - name: Set up Maven
        uses: actions/checkout@v2
        with:
-         distribution: 'adopt'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
+         distribution: 'zulu'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
          java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.) 
      - name: Build with Maven
        run: mvn clean install  # This will build your Java project using Maven
