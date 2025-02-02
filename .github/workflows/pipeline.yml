@@ -12,11 +12,18 @@ jobs:
    steps:
      - name: Checkout code
        uses: actions/checkout@v3  # Checks out your repository code
-     - name: Set up JDK 17
+     - name: Set up JDK 17 (Adoptium)
        uses: adoptium/setup-java@v2  # Sets up Java in the environment
        with:
-         java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
          distribution: 'adoptium'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
+         java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
+     - name: Verify Java installation
+       run: Java -version
+     - name: Set up Maven
+       uses: actions/checkout@v3
+       with:
+         distribution: 'adoptium'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
+         java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.) 
      - name: Build with Maven
        run: mvn clean install  # This will build your Java project using Maven
      - name: Run tests
