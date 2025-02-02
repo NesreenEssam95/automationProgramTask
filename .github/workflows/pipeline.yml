@@ -7,7 +7,7 @@ on:
    branches:
      - master
 jobs:
- build-and-test:
+ test:
    runs-on: ubuntu-latest  # Runs the job on the latest Ubuntu runner
    steps:
      - name: Checkout code
