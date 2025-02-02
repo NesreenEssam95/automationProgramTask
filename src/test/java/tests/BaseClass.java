@@ -26,7 +26,8 @@ public class BaseClass {
 		// WebDriverManager.firefoxdriver().setup();
 		 // Instantiate the FireFoxDriver
 		// driver = new FirefoxDriver(); 
-		 WebDriverManager.chromedriver().setup();
+		// WebDriverManager.chromedriver().setup();
+		 WebDriverManager.chromedriver().clearDriverCache().setup();
 		 driver = new ChromeDriver();
 		 wait =new WebDriverWait(driver, Duration.ofSeconds(10));
 		 ScreenShoot =new CaptureScreenShot(driver);
