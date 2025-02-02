@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.manager.SeleniumManager;
@@ -31,9 +32,12 @@ public class BaseClass {
 	  public void setup() throws IOException 
 	 {
 		//Initialize WebDriverManager to automatically download the necessary Web driver binary
-		WebDriverManager.firefoxdriver().setup();
+		//WebDriverManager.firefoxdriver().setup();
 		 // Instantiate the FireFoxDriver
-		 driver = new FirefoxDriver();
+		// driver = new FirefoxDriver();
+		  WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+		 
 		 wait =new WebDriverWait(driver, Duration.ofSeconds(10));
 		 ScreenShoot =new CaptureScreenShot(driver);
 		 driver.manage().window().maximize();
