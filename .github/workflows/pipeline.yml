@@ -12,7 +12,7 @@ jobs:
    steps:
      - name: Checkout code
        uses: actions/checkout@v2  # Checks out your repository code
-     - name: Set up JDK 17 (Adoptium)
+     - name: Set up JDK 17 (Adopt)
        uses: adopt/setup-java@v2  # Sets up Java in the environment
        with:
          distribution: 'adopt'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
