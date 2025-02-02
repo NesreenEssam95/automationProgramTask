@@ -1,0 +1,7 @@
+<suite name="Testing Suite">
+    <test name="Demo">
+        <classes>
+            <class name="tests.demoTask"/>
+        </classes>
+    </test>
+</suite>
