@@ -26,4 +26,5 @@ jobs:
       # run: mvn clean install  # This will build your Java project using Maven
        run: mvn --batch-mode --update-snapshots verify
      - name: Run tests with Maven
-       run: mvn test # This will run tests using Maven
+      # run: mvn test # This will run tests using Maven
+       run:  mvn -Dtest=demoTask test
