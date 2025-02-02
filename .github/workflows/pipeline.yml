@@ -11,12 +11,12 @@ jobs:
    runs-on: ubuntu-latest  # Runs the job on the latest Ubuntu runner
    steps:
      - name: Checkout code
-       uses: actions/checkout@v2  # Checks out your repository code
-     - name: Set up Java
-       uses: actions/setup-java@v2  # Sets up Java in the environment
+       uses: actions/checkout@v3  # Checks out your repository code
+     - name: Set up JDK 17
+       uses: adoptium/setup-java@v2  # Sets up Java in the environment
        with:
-         java-version: '11'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
-         distribution: 'adoptopenjdk'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
+         java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
+         distribution: 'adoptium'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
      - name: Build with Maven
        run: mvn clean install  # This will build your Java project using Maven
      - name: Run tests
