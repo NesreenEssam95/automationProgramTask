@@ -14,7 +14,6 @@ import utiles.CaptureScreenShot;
 	private String ascendingSort = "ascendingSort.png";
 	private String deletedCustomer = "deletedCustomer.png";
 
-
 	@Test(priority=0)
 	public void createNewCustomer() throws IOException, InterruptedException, EncryptedDocumentException {
 		
@@ -36,9 +35,7 @@ import utiles.CaptureScreenShot;
 		
 	    new HomePage(driver,wait).clickOnBankManagerLogin();
 	    new CustomersPage(driver,wait).clickOnCustomerButton().searchCustomer().assertOnCustomerDetails();
-	    
 	}
-	
 	@Test(priority=3)
 	public void sortCustomer() throws IOException, EncryptedDocumentException {
 		
