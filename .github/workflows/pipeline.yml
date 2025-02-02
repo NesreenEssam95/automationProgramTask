@@ -22,7 +22,7 @@ jobs:
        with:
          distribution: 'temurin'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
          java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.) 
-     - name: Build with Maven
+     - name: Build with Maven 
        run: mvn clean install  # This will build your Java project using Maven
        #run: mvn --batch-mode --update-snapshots verify
      - name: Run tests with Maven
