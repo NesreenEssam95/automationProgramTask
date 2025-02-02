@@ -7,22 +7,19 @@ on:
    branches:
      - master
 jobs:
- build:
-   runs-on: ubuntu-latest  # Runs the job on the latest Ubuntu runner
-   steps:
-     - name: Checkout code
-       uses: actions/checkout@v3  # Checks out your repository code
-     - name: Set up JDK 17 
-       uses: actions/setup-java@v3  # Sets up Java in the environment
-       with:
-         distribution: 'temurin'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
-         java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
-     - name: Set up Maven
-       uses: actions/checkout@v3
-       with:
-         distribution: 'temurin'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
-         java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.) 
-     - name: Build with Maven
-       run: mvn clean install  # This will build your Java project using Maven
-     - name: Run tests with Maven
-       run: mvn test # This will run tests using Maven
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - uses: actions/checkout@v3
+        with:
+         distribution: 'temurin'
+         java-version: '17'
+      - run: mvn clean install
+      - run: mvn test
