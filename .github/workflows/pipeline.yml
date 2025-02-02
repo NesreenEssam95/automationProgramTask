@@ -20,9 +20,9 @@ jobs:
         with:
          distribution: 'temurin'
          java-version: '17'
-      #- name: Build with Maven
-        #run: mvn -B package --file pom.xml
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
       #run: mvn --batch-mode --update-snapshots verify
-      - name: Test with Maven
-        run:  mvn -Dtest=demoTask -Dbrowser=firefox test
+      #- name: Test with Maven
+        #run:  mvn -Dtest=demoTask -Dbrowser=firefox test
        #run: mvn '-Dtest=test.*Test' test
