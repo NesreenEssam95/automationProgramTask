@@ -23,12 +23,11 @@ public class BaseClass {
 	  public void setup() throws IOException 
 	 {
 		//Initialize WebDriverManager to automatically download the necessary Web driver binary
+		 WebDriverManager.chromedriver().setup();
 		 ChromeOptions options = new ChromeOptions();
+		 options.addArguments("--headless");
 		 options.addArguments("--disable-gpu");
-		 options.addArguments("--disable-extensions");
-		 options.addArguments("user-data-dir=C:\\Users\\EssamN4\\AppData\\Roaming\\Chrome\\Profile 6");
-		 options.addArguments("--profile-directory=Profile 6");
-		 WebDriverManager.chromedriver().clearDriverCache().setup();
+		 options.addArguments("--no-sandbox");
 		 // Instantiate the chromeDriver
 		 driver = new ChromeDriver(options);
 		 wait =new WebDriverWait(driver, Duration.ofSeconds(10));
