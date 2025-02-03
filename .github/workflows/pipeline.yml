@@ -17,16 +17,6 @@ jobs:
        with:
          distribution: 'temurin'  # You can use 'adoptopenjdk', 'zulu', 'temurin', etc.
          java-version: '17'  # Specify the Java version you need (e.g., 8, 11, 17, etc.)
-     - name: Install Chrome dependencies
-       run: |
-         sudo apt-get update
-         sudo apt-get install -y wget curl unzip
-         sudo apt-get install -y libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 libgbm1
-     - name: Install Chrome
-       run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb
-          sudo apt-get install -f
      - name: Set up Maven
        uses: actions/checkout@v3
        with:
