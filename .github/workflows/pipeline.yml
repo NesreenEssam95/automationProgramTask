@@ -26,11 +26,11 @@ jobs:
        run: mvn clean install  # This will build your Java project using Maven
      - name: Run tests with Maven
        run:  mvn -Dtest=demoTask test
-     - name: Upload JUnit Test Report
+     - name: Upload Test Report
        uses: actions/upload-artifact@v3
        with:
-        name: junit-test-report
-        path: target/surefire-reports/*.xml 
+        name: test-report
+        path: test-report.xml 
      - name: Upload HTML Test Report (Optional) 
        uses: actions/upload-artifact@v3 
        with: 
