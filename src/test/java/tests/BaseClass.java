@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.manager.SeleniumManagerOutput;
@@ -22,6 +23,11 @@ public class BaseClass {
 	  public void setup() throws IOException 
 	 {
 		//Initialize WebDriverManager to automatically download the necessary Web driver binary
+		  ChromeOptions options = new ChromeOptions();
+		 options.addArguments("--disable-gpu");
+		 options.addArguments("--disable-extensions");
+		 options.addArguments("user-data-dir=C:\\Users\\EssamN4\\AppData\\Roaming\\Chrome\\Profile 6");
+		 options.addArguments("--profile-directory=Profile 6");
 		 WebDriverManager.chromedriver().clearDriverCache().setup();
 		 // Instantiate the chromeDriver
 		 driver = new ChromeDriver();
