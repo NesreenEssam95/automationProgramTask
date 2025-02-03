@@ -26,8 +26,8 @@ public class BaseClass {
 		 WebDriverManager.chromedriver().setup();
 		 ChromeOptions options = new ChromeOptions();
 		 options.addArguments("--headless");
-		 options.addArguments("--disable-gpu");
-		 options.addArguments("--no-sandbox");
+		 //options.addArguments("--disable-gpu");
+		 //options.addArguments("--no-sandbox");
 		 // Instantiate the chromeDriver
 		 driver = new ChromeDriver(options);
 		 wait =new WebDriverWait(driver, Duration.ofSeconds(10));
