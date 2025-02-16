@@ -18,7 +18,7 @@ public class BaseClass {
 	WebDriver driver;
 	CaptureScreenShot ScreenShoot;
 	WebDriverWait wait;
-
+	
 	@BeforeMethod
 	  public void setup() throws IOException 
 	 {
@@ -33,7 +33,7 @@ public class BaseClass {
 		 driver.manage().window().maximize();
 		 new HomePage(driver,wait).navigateTositeurl();
 	  }
-
+	
 	 @AfterMethod
 	  public void tearDown()
 	 {
