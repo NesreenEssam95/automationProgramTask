@@ -19,7 +19,6 @@ import utiles.CaptureScreenShot;
 		
 	    new HomePage(driver,wait).clickOnBankManagerLogin();
 	    new AddCustomerPage(driver,wait).addCustomer().validateCustomerAddedSuccessfully();
-
 	}
 
 	@Test
@@ -27,7 +26,6 @@ import utiles.CaptureScreenShot;
 		
 	    new HomePage(driver,wait).clickOnBankManagerLogin();
 	    new OpenAccountPage(driver,wait).openNewAccount().validateAccountAddedSuccessfully();
-
 	}
 
 	@Test
@@ -43,10 +41,8 @@ import utiles.CaptureScreenShot;
 	    new CustomersPage(driver,wait).clickOnCustomerButton().sortCustomersDescendingByPostalCode();
 		new CaptureScreenShot(driver).ScreenShot(descendingSort);
 		new CustomersPage(driver,wait).sortCustomersAscendingByPostalCode();
-		new CaptureScreenShot(driver).ScreenShot(ascendingSort);
-	    
-	}
-	
+		new CaptureScreenShot(driver).ScreenShot(ascendingSort);    
+	}	
 	@Test
 	public void deleteCustomer() throws IOException, EncryptedDocumentException {
 		
